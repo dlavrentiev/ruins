@@ -1,0 +1,45 @@
+body {
+    background-image: url('images/ukrainemap.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Make sure the body covers the full viewport height */
+}
+
+@font-face {
+    font-family: 'Namu1850';
+    src: url('assets/namu1850.otf') format('opentype');
+}
+
+body {
+    font-family: 'Namu1850', sans-serif;
+}
+
+.image-link img {
+    width: 200px; /* Fixed width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.centered-content {
+    width: 800px;
+    margin: 0 auto;
+    display: block;
+    background-color: rgba(0, 87, 183, 0.5); 
+    padding: 10px; 
+    box-sizing: border-box;
+    color: black;
+}
+
+.site-header {
+    background-color: rgba(255, 216, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+}
+
+.site-header img {
+    height: auto;
+    width: 150px;
+    display: inline-block;
+}
