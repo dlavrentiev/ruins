@@ -1,16 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <title>Ruïns</title>
-    </head>
-    <body>
-        <header class="site-header">
-            <img src="images/headruins.png">
-        </header>
-        <p>Paragraph 1</p>
-        <a href="raiko.html" class="image-link">
-            <img src="images/raiko.jpg">
-        </a>
-    </body>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Ruïns</title>
+</head>
+<body class="white-bg-page">
+
+    <div id="popupWindow" class="popup">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2>Message from the Creator</h2>
+            <p>The ongoing Russian-Ukrainian War, intensifying with Russia's full-scale invasion of Ukraine in February 2022, represents a significant moment in history. The conflict has led to devastating bloodshed and loss of lives, leaving a permanent scar on Ukrainian land. As news headlines and social media posts about the war gradually fade from public attention, this website serves as a poignant reminder of the ongoing war. It's important to note that this website is not merely about the buildings destroyed or their material aspects; it is a tribute to the people who brought life to these buildings and places.</p>
+        </div>
+    </div>
+    
+
+    <header class="site-header">
+        <img src="images/headruins.png">
+    </header>
+
+    <div class="map-container">
+        <img src="images/ukrainemap.jpg" class="ukraine-map">
+        <div class="content">
+            <div class="row">
+                <div class="column">
+                    <p>
+                    Polina Raiko House-Museum
+                    </p>
+                        <a href="raiko.html" class="image-link">
+                            <div class="image-container">
+                                <img src="images/raiko.jpg" class="static-image">
+                                <img src="images/raikoflood.gif" class="hover-image">
+                            </div>
+                        </a>
+                </div>
+                <div class="column">
+                    <p>
+                    Kharkiv Beketov University
+                    </p>
+                        <a href="kharkiv.html" class="image-link">
+                            <div class="image-container">
+                                <img src="images/kharkiv.jpg" class="static-image">
+                                <img src="images/kharkiv.gif" class="hover-image">
+                            </div>
+                        </a>
+                </div>
+                <div class="column">
+                    <p>
+                    Mariupol Drama Theatre
+                    </p>
+                    <a href="mariupoltheatre.html" class="image-link">
+                        <div class="image-container">
+                            <img src="images/mariupoltheatre.jpg" class="static-image">
+                            <img src="images/mariupoltheatre.gif" class="hover-image">
+                        </div>
+                    </a>
+                </div>
+                <div class="column">
+                    <p>
+                    Mariupol Hospital
+                    </p>
+                    <a href="mariupolhospital.html" class="image-link">
+                        <div class="image-container">
+                            <img src="images/mariupolhospital.jpg" class="static-image">
+                            <img src="images/mariupolhospital.gif" class="hover-image">
+                        </div>
+                    </a>
+                </div>       
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <h3>
+            <a href="index.html">Home</a> |
+            <a href="works-cited.html">Works Cited</a>
+        </h3>
+        <h4>Coded by Dmytro 'Dima' Lavrentiev (<em>Ukr. Дмитро Лаврентьєв</em>) for GRPH-3017-302: Graphic Design 3</h4>
+    </footer>
+
+    <script>
+        // Get the popup
+        var popup = document.getElementById("popupWindow");
+    
+        // Get the <span> element that closes the popup
+        var closeBtn = document.getElementsByClassName("close-button")[0];
+    
+        // When the user loads the site, open the popup 
+        window.onload = function() {
+            popup.style.display = "block";
+        }
+    
+        // When the user clicks on <span> (x), close the popup
+        closeBtn.onclick = function() {
+            popup.style.display = "none";
+        }
+    
+        // When the user clicks anywhere outside of the popup, close it
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        }
+    </script>
+    
+
+</body>
 </html>

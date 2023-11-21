@@ -1,11 +1,19 @@
+html {
+    height: 100%;
+}
+
 body {
-    background-image: url('images/ukrainemap.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-    margin: 0; /* Remove default margin */
-    height: 100vh; /* Make sure the body covers the full viewport height */
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: black; 
+    color: black;
+}
+
+.white-bg-page p {
+    background-color: white;
+    color: black; /* Assuming you want black text on white background */
 }
 
 @font-face {
@@ -17,29 +25,163 @@ body {
     font-family: 'Namu1850', sans-serif;
 }
 
-.image-link img {
-    width: 200px; /* Fixed width */
-    height: auto; /* Maintain aspect ratio */
+/* Popup window */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between rows */
+}
+
+.column {
+    flex: 1; /* Equal width columns */
+    text-align: center; /* Center text within each column */
+    padding: 0 10px; /* Space between columns */
+}
+
+.image-link {
+    display: block;
+    margin: 0 auto; /* Center images within columns */
+}
+
+
+
+
 .centered-content {
-    width: 800px;
+    width: 870px;
     margin: 0 auto;
     display: block;
-    background-color: rgba(0, 87, 183, 0.5); 
+    background-color: white; 
     padding: 10px; 
     box-sizing: border-box;
     color: black;
 }
 
 .site-header {
-    background-color: rgba(255, 216, 0, 0.5);
+    background-color: black;
+    color: white; 
     padding: 20px;
     text-align: center;
 }
 
 .site-header img {
     height: auto;
-    width: 150px;
+    width: 280px;
     display: inline-block;
+}
+
+.map-container {
+    flex-grow: 1;
+    position: relative;
+    padding-top: 20px; /* Space between the header and the map */
+}
+
+.ukraine-map {
+    width: 55%;
+    margin: 0 auto; /* Center the map */
+    display: block;
+    position: absolute; /* Keep position absolute for layering */
+    top: 20px; /* Align with the top padding of map-container */
+    left: 15%; /* Adjust left to center the image */
+    right: 15%; /* Adjust right to center the image */
+    z-index: 0; /* Keep the map behind the content */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* This ensures content is above the map */
+    padding: 0 20px; /* Padding on sides */
+    /* Other styles as needed */
+}
+
+
+.image-link .image-container {
+    position: relative;
+    width: 280px; /* Width of your images */
+}
+
+.image-link .static-image, .image-link .hover-image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-link .hover-image {
+    opacity: 0;
+}
+
+.image-link:hover .hover-image {
+    opacity: 1;
+}
+
+.image-link:hover .static-image {
+    opacity: 0;
+}
+
+
+
+.site-footer {
+    background-color: black; /* Set header and footer background to black */
+    color: white; /* Set text color to white for visibility */
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.site-footer h3 {
+    margin: 0; /* Remove default margin */
+    padding-bottom: 10px; /* Space between links and the text */
+}
+
+.site-footer a {
+    color: white;
+    text-decoration: none; /* No underline */
+}
+
+.site-footer a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+.site-footer p {
+    margin: 0; /* Remove default margin */
 }
